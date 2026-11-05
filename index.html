@@ -1,326 +1,322 @@
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>My Technology Portfolio</title>
-
-    <style>
-
-        body * {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #10243A;
-    color: #FFFFFF;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.7;
-}
-
-header {
-    text-align: center;
-    padding: 35px 20px;
-    background-color: #183653;
-    border-bottom: 3px solid #D4AF37;
-}
-
-h1 {
-    color: #D4AF37;
-    font-size: 30px;
-}
-
-nav {
-    margin-top: 20px;
-}
-
-nav a {
-    color: #FFD700;
-    text-decoration: none;
-    margin: 8px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: white;
-}
-
-main {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
-section {
-    background-color: #183653;
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 12px;
-    border: 1px solid #34516B;
-}
-
-h2, h3, h4 {
-    color: #D4AF37;
-}
-
-h2 {
-    border-bottom: 2px solid #D4AF37;
-    padding-bottom: 8px;
-}
-
-p {
-    font-size: 16px;
-}
-
-ul {
-    line-height: 2;
-}
-
-a {
-    color: #FFD700;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #183653;
-    border-top: 2px solid #D4AF37;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 24px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Portfolio of Gelan Hussein Said — management, technology, open learning, and web development.">
+  <title>Gelan Hussein Said | Technology & Web Development Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --surface: #111c2e;
+      --surface-2: #17243a;
+      --text: #edf3fb;
+      --muted: #a9b8cc;
+      --accent: #e0b45c;
+      --accent-2: #f2d28f;
+      --line: rgba(255,255,255,.12);
+      --max: 1120px;
+      --radius: 20px;
+      --shadow: 0 18px 50px rgba(0,0,0,.22);
     }
-
-    nav a {
-        display: inline-block;
-        margin: 6px;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0; background: radial-gradient(circle at 85% 8%, #1a2c47 0, transparent 30%), var(--bg);
+      color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
     }
-
-    main {
-        padding: 12px;
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20; background: rgba(11,18,32,.88);
+      backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);
     }
-
-    section {
-        padding: 18px;
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { text-decoration: none; font-weight: 800; letter-spacing: .02em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .94rem; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--accent-2); }
+    .menu-button { display: none; border: 1px solid var(--line); color: var(--text); background: var(--surface); padding: 9px 12px; border-radius: 10px; font: inherit; }
+    .hero { padding: 92px 0 76px; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 48px; align-items: center; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .16em; font-weight: 750; font-size: .78rem; }
+    h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.06; letter-spacing: -.045em; margin: 16px 0 22px; }
+    h1 span { color: var(--accent-2); }
+    .hero p { color: var(--muted); font-size: 1.12rem; max-width: 690px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+    .button { display: inline-flex; justify-content: center; align-items: center; padding: 12px 19px; border-radius: 999px; text-decoration: none; font-weight: 750; border: 1px solid var(--accent); transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--accent); color: #18202c; }
+    .button.secondary { color: var(--accent-2); }
+    .hero-card { padding: 28px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(145deg, rgba(224,180,92,.13), rgba(23,36,58,.9)); box-shadow: var(--shadow); }
+    .monogram { width: 104px; height: 104px; display: grid; place-items: center; border-radius: 28px; background: var(--accent); color: #172033; font-size: 2.2rem; font-weight: 900; margin-bottom: 22px; }
+    .hero-card h2 { margin: 0 0 6px; font-size: 1.35rem; }
+    .hero-card p { margin: 0; font-size: .98rem; }
+    .quick-facts { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 24px; }
+    .fact { background: rgba(11,18,32,.45); border: 1px solid var(--line); padding: 13px; border-radius: 14px; }
+    .fact strong { display: block; color: var(--accent-2); font-size: 1.1rem; }
+    .fact small { color: var(--muted); }
+    section { padding: 70px 0; }
+    .section-heading { max-width: 720px; margin-bottom: 30px; }
+    .section-heading h2 { font-size: clamp(1.9rem,4vw,2.8rem); line-height: 1.15; margin: 8px 0 12px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .about-grid, .project-grid, .skill-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .panel, .project-card, .skill-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; }
+    .panel p, .project-card p, .skill-card p { color: var(--muted); }
+    .panel h3, .project-card h3, .skill-card h3 { margin-top: 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .tag { border: 1px solid rgba(224,180,92,.35); color: var(--accent-2); padding: 6px 11px; border-radius: 999px; font-size: .83rem; }
+    .project-card { display: flex; flex-direction: column; min-height: 275px; }
+    .project-card .project-type { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .project-card .project-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: auto; padding-top: 15px; }
+    .text-link { color: var(--accent-2); font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .skill-grid { grid-template-columns: repeat(3,1fr); }
+    .skill-card .icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .timeline { border-left: 2px solid rgba(224,180,92,.5); margin-left: 9px; padding-left: 24px; }
+    .timeline-item { position: relative; padding: 0 0 22px; }
+    .timeline-item::before { content: ""; position: absolute; left: -31px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px var(--bg); }
+    .timeline-item h3 { margin: 0 0 4px; }
+    .timeline-item p { margin: 0; color: var(--muted); }
+    .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 32px; border-radius: 24px; background: linear-gradient(120deg, #1a2a42, #172033); border: 1px solid rgba(224,180,92,.3); }
+    .contact-box h2 { margin: 0 0 8px; }
+    .contact-box p { margin: 0; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted); font-size: .9rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    .notice { font-size: .88rem; color: var(--muted); border-left: 3px solid var(--accent); padding: 10px 14px; background: rgba(224,180,92,.07); border-radius: 0 10px 10px 0; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 800px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero { padding-top: 65px; }
+      .skill-grid { grid-template-columns: repeat(2,1fr); }
+      .contact-box { align-items: flex-start; flex-direction: column; }
     }
-
-/* Professional project styling */
-
-#projects h3 {
-    margin-top: 30px;
-    font-size: 22px;
-}
-
-#projects h4 {
-    font-size: 19px;
-}
-
-#projects hr {
-    border: 0;
-    border-top: 1px solid #D4AF37;
-    margin: 30px 0;
-}
-
-#projects a {
-    display: inline-block;
-    background-color: #D4AF37;
-    color: #10243A;
-    padding: 12px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-#projects a:hover {
-    background-color: #FFFFFF;
-}
-  /* Contact section */
-
-#contact {
-    text-align: center;
-}
-
-#contact p {
-    margin-bottom: 18px;
-}
-
-#contact a {
-    display: inline-block;
-    background-color: #D4AF37;
-    color: #10243A;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Footer improvement */
-
-footer {
-    text-align: center;
-    padding: 30px 15px;
-    background-color: #183653;
-    border-top: 2px solid #D4AF37;
-}
-
-footer p {
-    font-size: 15px;
-}
-    </style>
-
+    @media (max-width: 650px) {
+      .container { width: min(100% - 30px, var(--max)); }
+      .menu-button { display: inline-flex; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 18px 22px 22px; background: #101a2b; border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
+      .nav-links.open { display: flex; }
+      .about-grid, .project-grid, .skill-grid { grid-template-columns: 1fr; }
+      section { padding: 54px 0; }
+      .hero { padding-bottom: 48px; }
+      .quick-facts { gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-
-
 <body>
-
-    <header>
-    <h1>My Technology Portfolio</h1>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">GELAN <span>HUSSEIN SAID</span></a>
+      <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a>
+        <a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
     </nav>
-</header>
+  </header>
 
-<main>
-
-    <section id="home">
-        <h2>Welcome to My Portfolio</h2>
-        <p>
-            Aspiring Web Developer and Technology Enthusiast.
-        </p>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Technology • Learning • Problem-solving</div>
+          <h1>Building bridges between <span>business</span> and technology.</h1>
+          <p>I am Gelan Hussein Said, a structured problem-solver with an academic background in Management and technical training through the e-SHE Open edX program. I am developing my skills in web development, digital learning, technical documentation, and workflow automation.</p>
+          <div class="actions">
+            <a class="button primary" href="#projects">Explore my projects</a>
+            <a class="button secondary" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Portfolio introduction">
+          <div class="monogram" aria-hidden="true">GHS</div>
+          <h2>Gelan Hussein Said</h2>
+          <p>Management graduate • Technology learner • Aspiring web developer</p>
+          <div class="quick-facts">
+            <div class="fact"><strong>Management</strong><small>Academic background</small></div>
+            <div class="fact"><strong>e-SHE</strong><small>Open edX learning</small></div>
+            <div class="fact"><strong>Web</strong><small>Development focus</small></div>
+            <div class="fact"><strong>2026</strong><small>Portfolio edition</small></div>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-
-        <p>
-            I am a beginner web developer. I am learning HTML,
-            CSS and JavaScript. My ambition is to become a
-            professional web developer.
-        </p>
-
-        <p>
-            I am a structured problem-solver with an accredited
-            background in Management from Haramaya University
-            and formal training in technical software systems
-            via the e-SHE Open edX program.
-        </p>
-
-        <p>
-            I specialize in bridging the gap between business
-            operations and cloud learning technologies. My
-            focus centers on open-source e-learning
-            architectures, technical documentation, and
-            workflow automation.
-        </p>
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">About me</div>
+          <h2>Connecting structured thinking with digital solutions.</h2>
+          <p>My interests sit at the intersection of management, technology, and accessible learning.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel reveal">
+            <h3>My background</h3>
+            <p>I have an accredited background in Management from Haramaya University and formal training in technical software systems via the e-SHE Open edX program.</p>
+            <p>I am interested in bridging business operations and cloud learning technologies, with a focus on open-source e-learning architectures, technical documentation, and workflow automation.</p>
+          </article>
+          <article class="panel reveal">
+            <h3>What I am working toward</h3>
+            <p>I am building practical web-development skills and learning how digital tools can make information, education, and services easier to access.</p>
+            <div class="tag-row"><span class="tag">Continuous learning</span><span class="tag">Problem-solving</span><span class="tag">Digital education</span><span class="tag">Technology</span></div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="education">
-        <h2>My Education</h2>
-
-        <p>
-            Management - Haramaya University.
-        </p>
-
-        <p>
-            I am studying through the Ethiopian Higher
-            Education e-SHE platform.
-        </p>
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Education & learning</div>
+          <h2>A foundation for continuous growth.</h2>
+          <p>Academic and technical learning that informs my approach to technology and problem-solving.</p>
+        </div>
+        <div class="panel reveal">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Management — Haramaya University</h3>
+              <p>Academic background in management, organizational thinking, and business operations.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>e-SHE Open edX Program</h3>
+              <p>Formal training in technical software systems through Ethiopia's higher-education learning initiative.</p>
+            </div>
+            <div class="timeline-item">
+              <h3>Web development — ongoing learning</h3>
+              <p>Developing practical skills in HTML, CSS, JavaScript, Git, and publishing websites with GitHub Pages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
-        <h2>My Skills</h2>
-
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript - Currently Learning</li>
-            <li>Technical Documentation</li>
-            <li>Problem Solving</li>
-        </ul>
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Skills & interests</div>
+          <h2>Areas I am developing and exploring.</h2>
+          <p>This section distinguishes my professional interests from technical skills I am currently learning.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card reveal"><div class="icon">⌨️</div><h3>Web development</h3><p>Currently learning HTML, CSS, JavaScript, responsive design, and website publishing.</p></article>
+          <article class="skill-card reveal"><div class="icon">☁️</div><h3>Cloud learning technologies</h3><p>Interest in open-source e-learning platforms and digital learning environments.</p></article>
+          <article class="skill-card reveal"><div class="icon">📘</div><h3>Technical documentation</h3><p>Organizing information clearly so that processes and technical ideas are easier to understand.</p></article>
+          <article class="skill-card reveal"><div class="icon">⚙️</div><h3>Workflow automation</h3><p>Exploring how digital tools can simplify repeatable tasks and business workflows.</p></article>
+          <article class="skill-card reveal"><div class="icon">📊</div><h3>Management</h3><p>Applying structured problem-solving and an understanding of business operations.</p></article>
+          <article class="skill-card reveal"><div class="icon">🔎</div><h3>Research & analysis</h3><p>Exploring the relationship between language, Islamic scholarship, artificial intelligence, and technology.</p></article>
+        </div>
+      </div>
     </section>
 
     <section id="projects">
-        <h2>My Projects</h2>
-
-        <h3>Completed Project</h3>
-
-        <h4>The Miracle of the Quran</h4>
-
-        <p>
-            AI, Technology, and the Eternal Challenge
-            of Inimitability.
-        </p>
-
-        <p>
-            A scholarly work exploring Quranic inimitability,
-            classical Islamic scholarship, artificial
-            intelligence, modern technology, and
-            computational analysis.
-        </p>
-
-        <p>
-            The digital edition is freely available
-            for reading and downloading.
-        </p>
-
-        <a href="https://sites.google.com/view/miracleofthequran/home">
-            READ THE BOOK
-        </a>
-
-        <hr>
-
-        <h3>Future Project</h3>
-
-        <h4>Open edX Custom Deployment &amp; Configuration</h4>
-
-        <p>
-            A planned project to explore localized deployment
-            and customization of the Open edX learning
-            management system using Tutor.
-        </p>
-
-        <p>
-            Focus areas: Open edX architecture, deployment,
-            container configuration, learning pathways,
-            and technical documentation.
-        </p>
-
-        <p><strong>Status: Coming Soon</strong></p>
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Featured projects</div>
+          <h2>Selected work and learning projects.</h2>
+          <p>Projects that demonstrate my interests in research, publishing, and practical digital skills.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-type">Research & digital publication</div>
+            <h3>The Miracle of the Quran</h3>
+            <p><strong>AI, Technology, and the Eternal Challenge of Inimitability</strong></p>
+            <p>A book exploring Qur'anic inimitability, classical Islamic scholarship, artificial intelligence, modern technology, and computational analysis.</p>
+            <p>By Gelan Hussein Said · 2026 · E-book</p>
+            <div class="project-links">
+              <a class="text-link" href="https://sites.google.com/view/miracleofthequran/home" target="_blank" rel="noopener noreferrer">Visit book website ↗</a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+  <div class="project-type">Ongoing Business Project</div>
+  <h3>Local Milk Delivery</h3>
+  <p><strong>Connecting Farmers and Families</strong></p>
+  <p>
+    A proposed subscription-based dairy delivery
+    initiative connecting local farmers with
+    consumers through digital ordering, quality
+    assurance, and efficient distribution.
+  </p>
+  <p><strong>Focus:</strong> Business development,
+  digital commerce, supply chain management,
+  and sustainable distribution.</p>
+  <p><strong>Status:</strong> Ongoing — Planning stage</p>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-type">Web development learning</div>
+            <h3>Personal Technology Portfolio</h3>
+            <p>A responsive portfolio website built with HTML, CSS, and JavaScript and prepared for publication through GitHub Pages.</p>
+            <p><strong>Focus:</strong> semantic HTML, responsive styling, accessible navigation, and version control.</p>
+            <div class="project-links"><a class="text-link" href="#home">View this portfolio ↑</a></div>
+          </article>
+        </div>
+        <p class="notice" style="margin-top:18px">Add future projects here as you complete them. Only list certificates, awards, client work, or technical abilities that you can verify.</p>
+      </div>
     </section>
 
     <section id="contact">
-        <h2>Contact Me</h2>
-
-        <p>
-            Thank you for visiting my professional portfolio.
-        </p>
-
-        <p>
-            I welcome opportunities for learning,
-            collaboration, and professional development.
-        </p>
-
-        <a href="https://www.google.com">
-            Visit Google
-        </a>
+      <div class="container">
+        <div class="contact-box reveal">
+          <div>
+            <div class="eyebrow">Contact</div>
+            <h2>Let's connect and exchange ideas.</h2>
+            <p>For professional discussions, collaboration, or technology-related opportunities, please use the contact details you add below.</p>
+          </div>
+          <a class="button primary"
+href="mailto:sgelanhussein@gmail.com"
+        </div>
+        <p class="notice" style="margin-top:16px">
+  Professional contact: <a href="mailto:sgelanhusseins@gmail.com">sgelanhusseins@gmail.com</a> in this file with your real professional email address.
+</p>
     </section>
+  </main>
 
-</main>
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Gelan Hussein Said. All rights reserved.</span>
+      <span>Designed for learning, growth, and meaningful digital work.</span>
+    </div>
+  </footer>
 
-<footer>
-    <p>© 2026 My Technology Portfolio</p>
-    <p>Designed and developed by Gelan Hussein Said.</p>
-</footer>
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
 
+    // Keep the copyright year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal sections gently as they enter the screen
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+  </script>
 </body>
 </html>
